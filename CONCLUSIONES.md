@@ -1,0 +1,11 @@
+#### **`CONCLUSIONES.md`**
+```markdown
+# Conclusiones de la Práctica de Servicios SOAP con Express
+
+Comprendi la arquitectura de integración mediante el protocolo SOAP y la especificación WSDL. SOAP (Simple Object Access Protocol) permite la comunicación estandarizada e independiente del lenguaje o plataforma mediante sobres XML que garantizan un formato estricto y seguro para el intercambio de mensajes. Por su parte, un contrato WSDL (Web Services Description Language) sirve como un acuerdo explícito que describe formalmente los métodos disponibles, los tipos de datos requeridos y la ubicación exacta del servicio, permitiendo a los clientes consumir la API sin necesidad de conocer su implementación interna.
+
+Observe una clara diferencia entre la consulta del contrato WSDL y la invocación de una operación. Consultar el WSDL mediante una petición GET (`?wsdl`) devuelve un documento explicativo estático que actúa como guía para la integración. En cambio, invocar una operación implica realizar un envío HTTP POST con un sobre SOAP completo en el cuerpo de la petición, desencadenando la ejecución de la lógica de negocio en el servidor y recibiendo una respuesta formateada en XML.
+
+La estructuración del código utilizando un Express Router facilita la modularización y mantenibilidad del sistema. En lugar de saturar el archivo principal con múltiples rutas y lógica de negocio, el enrutador separa las responsabilidades y permite escalar la aplicación de forma ordenada. Asimismo, la implementación de un middleware de registro centralizado justifica su uso al evitar la duplicación de código en cada operación, permitiendo monitorear métricas globales como el método HTTP, la URL, el código de estado y el tiempo de respuesta sin alterar el contenido XML intercambiado.
+
+SOAP con WSDL resulta ideal en entornos empresariales altamente regulados o bancarios donde la rigidez del contrato, la tipificación estricta y los estándares de seguridad complejos son indispensables. Por el contrario, una API REST con JSON es preferible en aplicaciones web y móviles modernas debido a su ligereza, flexibilidad y facilidad de consumo desde navegadores.
